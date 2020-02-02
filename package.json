@@ -1,0 +1,40 @@
+{
+  "name": "kamprad",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "css-toggle-switch": "^4.1.0",
+    "firebase": "^6.4.1",
+    "firebase-admin": "^8.3.0",
+    "firebase-functions": "^3.2.0",
+    "firebaseui": "^4.1.0",
+    "http2": "^3.3.7",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-firebaseui": "^4.0.0",
+    "react-scripts": "3.1.0",
+    "react-sticky": "^6.0.3",
+    "react-switch": "^5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

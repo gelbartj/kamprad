@@ -1,0 +1,950 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/*
+.minuteShadow {
+  width:0px;
+  height:0px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  box-sizing:border-box;
+  border-radius:20px;
+}
+*/
+
+.minuteBlock.justUpdated.success {
+  animation: glow-gold 3 1.25s ease-in-out;
+}
+
+.legend.justUpdated.success {
+  animation: glow-gold-small 3 1.25s ease-in-out;
+}
+
+.minuteBlock.justUpdated.fail {
+  background:black;
+  animation: glow-black 3 1.25s ease-in-out;
+}
+
+.legend.justUpdated.fail {
+  animation: glow-black-small 3 1.25s ease-in-out;
+}
+
+.currHour .minuteBlock.justUpdated.success {
+  animation: glow-gold-big 3 1.25s ease-in-out;
+}
+
+.currHour .minuteBlock.justUpdated.fail {
+  animation: glow-black-big 3 1.25s ease-in-out;
+}
+
+@keyframes glow-gold {
+  0% { 
+    box-shadow:0; 
+  }
+
+  50% {  
+  box-shadow:0px 0px 3px 3px gold; 
+  }
+
+  100% {  
+  box-shadow:0;
+  }
+}
+
+@keyframes glow-gold-small {
+  0% { 
+    box-shadow:0; 
+  }
+
+  50% {  
+  box-shadow:0px 0px 2px 2px gold; 
+  }
+ 
+  100% {  
+  box-shadow:0;
+  }  
+}
+
+@keyframes glow-black {
+  0% { 
+    box-shadow:0; 
+  }
+
+  50% {  
+  box-shadow:0px 0px 3px 3px rgba(0,0,0,50%); 
+  }
+
+  100% {  
+  box-shadow:0;
+  }
+}
+
+@keyframes glow-black-small {
+  0% { 
+    box-shadow:0; 
+  }
+
+  50% {  
+  box-shadow:0px 0px 2px 2px rgba(0,0,0,50%); 
+  }
+
+  100% {  
+  box-shadow:0;
+  }
+}
+
+@keyframes glow-gold-big {
+  0% { 
+    box-shadow:0; 
+  }
+
+  50% {  
+  box-shadow:0px 0px 4px 4px gold; 
+  }
+
+  100% {  
+    box-shadow:0;
+    }
+}
+
+@keyframes glow-black-big {
+  0% { 
+    box-shadow:0; 
+  }
+
+
+  50% {  
+  box-shadow:0px 0px 4px 4px rgba(0,0,0,50%); 
+  }
+ 
+
+  100% {  
+  box-shadow:0;
+  }
+}
+
+.container {
+  margin:0 auto;
+  text-align:center;
+  background:rgba(245, 245, 245, 0.95);
+  box-shadow: 0px 5px 5px #434366;
+  width:60%;
+  clear:both;
+  display:block;
+}
+
+@media only screen and (max-width:900px) {
+  .container{
+  width:100%;
+  }
+}
+
+.container--top {
+  align-self: flex-start;
+}
+
+.container--bottom {
+  align-self: flex-end;
+}
+
+.wrap {
+  align-items: center;
+  justify-content:center;
+  margin-top:90px;
+  text-align:center;
+}
+
+@media only screen and (max-width:700px) {
+  .wrap {
+    margin-top:70px;
+  }
+}
+
+body {
+  background:url('/stockholm.jpg');
+  background-repeat: no-repeat;
+  background-color:#555;
+  background-attachment:fixed;
+  height:100vh;
+  color:#333;
+}
+
+.header h1 {
+  color:yellow;
+  font-size:3em;
+  margin:0;
+  padding:0;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align:center;
+  display:inline;
+  width:60%;
+  clear:none;
+}
+
+@media only screen and (max-width:700px) {
+  .header h1 {
+    font-size:2em;
+  }
+}
+
+.header h2 {
+  color:yellow;
+}
+
+.header .suffix {
+  color:rgba(255,255,0,0.75);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:2em;
+  font-variant:small-caps;
+}
+
+.header a {
+  text-decoration:none;
+}
+
+button.menuButton {
+  background-color:darkblue;
+  border:0;
+  vertical-align:center;
+  cursor:pointer;
+}
+
+.menuButton div {
+  width: 30px;
+  height: 4px;
+  background-color: yellow;
+  margin: 6px 0;
+}
+
+.menuButton {
+  vertical-align:middle;
+  margin-top:15px;
+}
+
+.menuButtonWrapper {
+  float:left;
+  width:20%;
+  vertical-align:middle;
+  text-align:left;
+}
+
+@media only screen and (max-width:700px) {
+  .menuButton {
+    margin-top:5px;
+  }
+}
+
+.menuButton div.last {
+  margin: 6px 0 0 0;
+}
+
+.menuButton div.first {
+  margin:0 0 6px 0;
+}
+
+.header {
+  background-color:darkblue;
+  padding:15px;
+  margin-top:0px;
+  margin-bottom:0px;
+  /* box-shadow: 0px 5px 10px #282c34; */
+  text-align:center;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+}
+
+.infoButton {
+  border-radius:50%;
+  background:none;
+  border:2px solid yellow;
+  color:yellow;
+  font-size:0.8em;
+  margin-top:20px;
+  margin-right:30px;
+  font-weight:bold;
+}
+
+.infoButtonWrapper {
+  width:20%;
+  float:right;
+  text-align:right;
+}
+
+.infoButton:hover {
+  cursor:pointer;
+  background:yellow;
+  color:darkblue;
+}
+
+@media only screen and (max-width:700px) {
+  .infoButton {
+    margin-top:10px;
+  }
+}
+.quoteInline {
+  font-size:0.9em;
+  font-style:italic;
+  color:#444;
+  margin:5px auto;
+  text-align:center;
+  padding:10px 10px 0 10px;
+}
+
+@media only screen and (min-width:900px) {
+  .quoteInline {
+    font-size:1.1em;
+  }
+}
+
+.infoContainer {
+  background:rgba(255,255,255,80%);
+  padding:0px;
+  height:0px;
+  overflow:hidden;
+  transition:0.4s;
+  margin:0;
+  clear:both;
+  text-align:left;
+}
+
+.infoContainer.show {
+  padding:20px;
+  height:auto;
+  overflow:auto;
+  line-height:150%;
+  clear:both;
+}
+
+.infoContainer p {
+  margin:0;
+  padding:10px;
+}
+
+.infoContent {
+  width:90%;
+  margin:0 auto;
+}
+
+.quoteCite {
+  margin-top:10px;
+}
+
+.container .table {
+  border-spacing:0px;
+  padding-bottom:20px;
+  width:100%;
+  transition: 0.4s;
+}
+
+.tableWrap {
+  /*
+  height:50vh;
+  overflow-y:scroll;
+  */
+}
+
+.table thead th {
+  padding-bottom:10px;
+}
+
+thead, th {
+  margin:0;
+  padding:0;
+  font-weight:normal;
+  color:#555;
+}
+
+h2 {
+  margin-bottom:0px;
+}
+
+.container h2 {
+  letter-spacing:2px;
+}
+
+td {
+  vertical-align: middle;
+}
+
+div.minuteBlock:hover {
+  background:white;
+  cursor: pointer;
+}
+
+div.minuteBlock.future:hover{
+  cursor:default;
+  background:none;
+}
+
+div.minuteBlock.future {
+  border:1px solid #ccc;
+}
+
+
+.hour {
+  text-align:right;
+  font-size:1.2em;  
+  letter-spacing: 2px;
+  min-width:50px;
+  width:15%;
+  color:#555;
+}
+
+.amPm { 
+  color:darkgrey; 
+  font-size:0.8em;
+
+  font-variant:small-caps;
+}
+
+.currHour .amPm {
+  font-weight:bold;
+}
+
+td.minuteCell {
+  padding:10px;
+  text-align:center;
+  position:relative;
+  width:14%;
+}
+
+.currHour td.minuteCell {
+  padding:16px;
+}
+
+td.minuteCell:after {
+  content:'';
+  margin-top:100%;
+  display:block;
+}
+
+.minuteBlock {
+  border:1px solid #ccc;
+  padding:0px;
+  position:absolute;
+  top:10px;
+  left:10px;
+  transition: 0.4s;
+  width: 70%;
+  height:70%;
+}
+
+.minuteBlock.current {
+  box-shadow: 0px 0px 0px 2px #282c34;
+  /*box-shadow:0px 0px 3px 3px gold;*/
+}
+
+.currHour .minuteBlock {
+  width:75%;
+  height:75%;
+  border:1px solid black;
+  top:10px;
+  left:10px;
+}
+
+.currHour {
+  background: rgba(255,255,255, 0.6);
+  transition:0.4s;
+}
+
+.currHour .minuteBlock.future {
+  border:1px solid #999;
+}
+
+.currHour td.hour {
+  font-size:1.3em;
+  font-weight:bold;
+  color:black;
+}
+
+tr.last td {
+  /*padding-bottom:10px;*/
+}
+
+tr.first td {
+  /*padding-top:10px;*/
+}
+
+@media only screen and (min-width:900px) {
+  .container .table {
+    width:65%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .container .table .minuteBlock {
+    width:60%;
+    height:60%;
+  }
+  .container .table .currHour .minuteBlock {
+    width:70%;
+    height:70%;
+  }
+}
+
+/*
+tr:not(.currHour) .minuteBlock .progress{
+  box-shadow:0 0 2px 2px #aaa inset;
+}
+
+tr.currHour .minuteBlock:not(.current):not(.future) .progress {
+  /*box-shadow:0 0px 1px 2px rgba(48,48,48,0.3);
+}
+*/
+
+.hourEff, .effHeader {
+  color:#333;
+  font-size:0.9em;
+  text-align:center;
+  width:15%;
+  min-width:50px;
+  font-style:italic;
+}
+
+.hourEffContent, .effHeaderContent {
+  display:none;
+}
+
+.currHour .hourEFf {
+  background: rgba(255,255,255, 0.6);
+  transition:0.4s;
+}
+
+.minuteBlock .progress {
+  background-color:rgba(204,204,204,50%);
+  margin:0px;
+  height:100%;
+  transition:0.3s;
+}
+
+.progress.success, .legend.success {
+  background-color:rgb(54, 100, 54);
+}
+
+.progress.fail, .legend.fail {
+  background-color:rgb(145, 53, 53);
+}
+
+.currHour .progress.success, .todayStats .legend.success, .effHeader .legend.success {
+  background-color:rgb(8,180,50);
+}
+
+.currHour .progress.fail, .todayStats .legend.fail {
+  background-color:rgb(224,15,15);
+}
+
+
+.stats {
+  display:inline-block;
+  padding:10px 10px 0 10px;
+  text-align:right;
+  clear:both;
+}
+
+.todayStats {
+  margin-bottom:13px;
+  color:#555;
+}
+
+.yesterdayStats {
+  color:grey;
+  font-size:0.9em;
+  padding-right:3px;
+}
+
+.todayStats .legend {
+  padding:0px 8px;
+  margin:0 5px 0 10px;
+  border:1px solid black;
+}
+
+.effHeader .legend {
+  padding:0px 8px;
+  border:1px solid black;
+}
+
+.yesterdayStats .legend {
+  padding:0px 7px;
+  margin-right:8px;
+  border:1px solid grey;
+}
+
+.yesterdayStats .legend.fail {
+  margin-left:15px;
+}
+
+.yesterdayStats .legend.success {
+  margin-left:11px;
+}
+
+.yesterdayStats.hide {
+  display:none;
+}
+
+.day {
+  font-variant:small-caps;
+  font-feature-settings:inherit;
+  color:#444;
+  display:none;
+}
+
+#footer {
+  font-size:0.8em;
+  margin-top:10px; 
+  padding:5px 0px 10px 0px;
+  font-style:italic;
+  text-align:center;
+  background:rgba(255, 255, 255, 0.8);
+}
+
+.working {
+  padding:2px;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:0.9em;
+  margin-top:10px;
+  margin-bottom:10px;
+  vertical-align:middle;
+  width:60%;
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+  display:inline-block;
+}
+
+@media only screen and (max-width:900px) {
+  .working {
+    width:100%
+  }
+}
+
+@media only screen and (min-width:1000px) {
+  .working {
+    font-size:1.1em;
+  }
+}
+
+.workingMsg, .notWorkingMsg {
+  color:#777;
+  transition:0.2s;
+  padding:5px;
+  width:40%;
+  cursor:pointer;
+}
+
+.workingMsg {
+  text-align:right;
+}
+
+.notWorkingMsg {
+  text-align:left;
+}
+
+.workingMsg::after, .notWorkingMsg::after {
+  display: block;
+  content: attr(title);
+  font-weight: bold;
+  height: 1px;
+  color: transparent;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.workingMsg.active {
+  color:darkgreen;
+  font-weight:bold;
+}
+
+.notWorkingMsg.active {
+  font-weight:bold;
+  color:darkred;
+}
+
+.switchWrapper {
+  vertical-align: middle;
+  width:15%;
+  text-align: center;
+}
+
+.settingsBox {
+  position:fixed;
+  z-index:99;
+  width:20%;
+  margin:20px 0;
+  padding:15px 20px 15px 15px;
+  background:#eee;
+  text-align:center;
+  font-size:0.9em;
+  box-shadow: 0px 5px 5px #434366;
+  transition:0.4s;
+  min-width:200px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.settingsWrap {
+  margin-left:auto;
+  margin-right:auto;
+}
+.settingsBox p {
+  font-size:0.8em;
+}
+
+.settingsDivider {
+  margin:15px;
+}
+
+.settingsBox button.normal, .settingsBox button.signOut {
+  border:2px solid black;
+  border-radius:5px;
+  font-variant:small-caps;
+  font-weight:bold;
+  padding:7px;
+  background:none;
+}
+
+.settingsBox button.normal {
+  margin-top:10px;
+}
+
+.settingsBox button.normal:hover, .settingsBox button.signOut:hover {
+  cursor:pointer;
+  background-color:rgb(192, 192, 192);
+}
+
+.settingsBox button.normal:active, .settingsBox button.signOut:active {
+  background-color:rgb(179, 179, 179);
+}
+
+.settingsBox button.close {
+  cursor:pointer;
+  background:none;
+  position: absolute;
+  right:5px;
+  top:10px;
+  border:0;
+  font-weight:bold;
+}
+
+.settingsBox.hide {
+  transform: translateX(-90%);
+  -webkit-transform: translateX(-90%);
+  background:rgba(168, 206, 255, 0.5);
+}
+
+@media only screen and (max-width:700px) {
+.settingsBox.hide {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+}
+
+.tos, .pp {
+  left:20%;
+  width:80%;
+  display:none;
+  background:white;
+  z-index:101;
+  position:fixed;
+  text-align:left;
+  padding:0 20px 20px 20px;
+  overflow-y:scroll;
+  height:90vh;
+}
+
+.tos.show, .pp.show {
+  display:block;
+}
+
+.plainLink {
+  background:none;
+  border:0;
+  cursor:pointer;
+}
+
+.rightWedge {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 10px solid black;
+    border-bottom: 5px solid transparent;
+}
+
+.addEarlyRow button:hover, .reset:hover {
+  background:rgba(255, 255, 255, 0.75);
+  cursor:pointer;
+}
+
+.addEarlyRow button {
+  cursor:pointer;
+  border:0;
+  background:none;
+  font-weight:bold;
+  width:100%;
+  padding:5px;
+  color:#777;
+}
+
+.addEarlyRow.bottom button {
+  visibility:hidden;
+}
+
+.addEarlyRow {
+  padding:5px;
+} 
+
+.addEarlyRow.spacerTop {
+  padding-top:26px;
+}
+
+.addEarlyRow.bottom.show button {
+  visibility:visible;
+}
+
+.reset {
+  background:rgba(255,255,255,0.4);
+  margin-bottom:15px;
+  cursor:pointer;
+  padding:5px 10px;
+  border:1px solid #ccc;
+  border-radius:10px;
+}
+
+
+.addEarlyRow button:active {
+  background:rgba(255,255,255,0.4);
+}
+
+/*
+@media only screen and (max-width:750px) {
+  .settingsBox {
+    visibility:hidden;
+  }
+} 
+*/
+
+.settingsBox h3 {
+  margin-top:0;
+}
+
+
+.react-switch, .react-switch *, .react-switch > * {
+  border-radius:0;
+}
+
+/* Begin settings for settingsBox checkbox */
+.checkContainer {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left:17px;
+  padding-bottom:7px;
+}
+
+/* Hide the browser's default checkbox */
+.checkContainer input {
+
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark, .radio {
+  position: absolute;
+  top: 0;
+  left: -7px;
+  height: 15px;
+  width: 15px;
+  border:2px solid black;
+}
+
+.checkmark {
+  border-radius:1px;
+}
+
+.radio {
+  border-radius:50%;
+}
+
+/* On mouse-over, add a grey background color */
+.checkContainer:hover input ~ .checkmark, 
+.checkContainer:hover input ~ .radio {
+  background-color: rgb(151, 151, 151);
+}
+
+.checkContainer input:active {
+  background-color:rgb(124, 124, 124);
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkContainer input:checked ~ .checkmark,
+.checkContainer input:checked ~ .radio {
+  background: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after, .radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkContainer input:checked ~ .checkmark:after,
+.checkContainer input:checked ~ .radio:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkContainer .checkmark:after {
+  left: 5px;
+  top: 2px;
+  width: 3px;
+  height: 7px;
+  border: solid black;
+  border-width: 0 2px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkContainer .radio:after {
+  left: 3px;
+  top: 3px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid black;
+  border-radius:50%;
+  background:black;
+}
+
+
+.hrsToShowField {
+  padding:0;
+  border-radius:8px;
+  border:0;
+  margin-top:10px;
+}
+
+.hrsToShowField p {
+  margin:5px;
+}

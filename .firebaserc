@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "kamprad-io",
+    "staging": "kamprad-io"
+  }
+}
