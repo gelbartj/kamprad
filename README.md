@@ -7,4 +7,4 @@ Inspired by Ingvar Kamprad's quote above, I created Kamprad.xyz, a productivity 
     
 This project was my first React app (hence the single huge file with all components in it, which I've since learned from...) and my first time using Google Firebase. It is installable as a PWA and has live synchronization capabilities through Firebase.
 
-Live at [http://kamprad.xyz](Kamprad.xyz)
+Live at [Kamprad.xyz](http://kamprad.xyz)
